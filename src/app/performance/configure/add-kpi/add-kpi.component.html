@@ -1,0 +1,250 @@
+<div class="content">
+  <div class="top-header">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 heading">
+        <h4>Add Key Performance Indicators</h4>
+      </div>
+      <div class="col-md-6 col-lg-6 breadcrumb">
+        <ul class="breadcrumb-items"> 
+          <li><a routerLink="/dashboard">Home</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li>Performance</li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><a routerLink="/kpis">Key Performance Indicators</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li>Add Key Performance Indicators</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="element-content">
+    <div class="job-box">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">            
+          <form class="search-form" #addJobFrm = "ngForm" name="form" (ngSubmit)="addJobFrm.form.valid" novalidate>
+            <div class="form-header">
+              <h5>Add Key Performance Indicators</h5>
+            </div>
+            <div class="padding-20">
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label class="col-sm-4 col-form-label">Select department <span class="req-field">*</span></label>
+                  <div class="col-sm-8">
+                    <ng-multiselect-dropdown
+                      name="department" 
+                      class="mb-10"
+                      (onSelect)="onItemSelect($event)" 
+                      (onDeSelect)="OnItemDeSelect($event)"
+                      (onSelectAll)="onSelectAll($event)"
+                      (onDeSelectAll)="onDeSelectAll($event)" 
+                      [placeholder]="'Select Department(s)'"
+                      [data]="departments"
+                      [settings]="dropdownSettings"
+                      #department="ngModel" 
+                      [(ngModel)]="kpiData.department" 
+                      [ngClass]="{ 'is-invalid': addJobFrm.submitted && department.invalid }" 
+                      required
+                      id="departments">
+                    </ng-multiselect-dropdown>
+
+                    <div *ngIf="department.touched && department.invalid" class="invalid-feedback">
+                      <div *ngIf="department.touched && department.errors.required">Department is required</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="col-sm-4 col-form-label">Select job title <span class="req-field">*</span></label>
+                  <div class="col-sm-8">
+                    <ng-multiselect-dropdown
+                      name="jobTitle" 
+                      class="mb-10"
+                      (onSelect)="onTitleSelect($event)" 
+                      (onDeSelect)="OnTitleDeSelect($event)"
+                      [placeholder]="'Select Job Title(s)'"
+                      [data]="selectedJobTitles"
+                      [settings]="jobTitlesDropdownSettings"
+                      #jobTitle="ngModel" 
+                      [(ngModel)]="kpiData.jobTitle" 
+                      [ngClass]="{ 'is-invalid': addJobFrm.submitted && jobTitle.invalid }" 
+                      required 
+                      id="jobtitles">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="jobTitle.touched && jobTitle.invalid" class="invalid-feedback">
+                      <div *ngIf="jobTitle.touched && jobTitle.errors.required">Job Title is required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="padding-20">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Indicator <span class="req-field">*</span></th>
+                    <th>Minimum Rating <span class="req-field">*</span></th>
+                    <th>Maximum Rating <span class="req-field">*</span></th>
+                    <th>Default <span class="req-field">*</span></th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let field of kpiData.indicatorArray; let i = index">
+                    <td>
+                      <input [(ngModel)]="field.indicator" class="form-control" type="text" name="indicator_{{i}}" [pattern]="kpiPattern" #indicator="ngModel" required id="indicator" blur=""/>
+                       <div *ngIf="indicator.touched && indicator.invalid" class="invalid-feedback mt-0">
+                        <div *ngIf="indicator.touched && indicator.errors.required">Indicator is required</div>
+                      </div>
+                     <div *ngIf="indicator.errors?.pattern" class="invalid-feedback mt-0">
+                        Enter a valid indicator
+                      </div>
+                    </td>
+                    <td>
+                      <input [(ngModel)]="field.minRating" class="form-control" type="text" name="minRating_{{i}}" #minRating="ngModel" required (change)="checkrating()" pattern="^[1-9]\d*$" id="minRating" value="1"/>
+                      <div *ngIf="minRating.touched && minRating.invalid" class="invalid-feedback mt-0">
+                        <div *ngIf="minRating.touched && minRating.errors.required">Rating is required</div>
+                      </div>
+                      <div *ngIf="minRating.errors?.pattern" class="invalid-feedback mt-0">
+                        Enter a valid number
+                      </div>
+                    </td>
+                    <td>
+                      <input [(ngModel)]="field.maxRating" class="form-control" type="text" name="maxRating_{{i}}" #maxRating="ngModel" required (change)="checkrating()" pattern="^[1-9]\d*$" id="maxRating" max="100"/>
+                      <p *ngIf="rateerror" style="color: red;font-weight:bold;">{{ rateerror }}</p>
+                      <div *ngIf="maxRating.touched && maxRating.invalid" class="invalid-feedback mt-0">
+                        <div *ngIf="maxRating.touched && maxRating.errors.required">Rating is required</div>
+                      </div>
+                      <div *ngIf="maxRating.errors?.pattern" class="invalid-feedback mt-0">
+                        Enter a valid number
+                      </div>
+                      <div *ngIf="maxRating.errors?.max" class="invalid-feedback mt-0">
+                        Should be less than or equal to 100
+                      </div>
+                    </td>
+                    <td>
+                      <input [(ngModel)]="field.defaultScale" class="form-control" type="checkbox" name="defaultScale_{{i}}" #defaultScale="ngModel" style="width: 15%; height: 15px; box-shadow: none; margin: auto;" id="defaultScale"/>
+                    </td>
+                    <td>
+                      <button *ngIf="i!==0" class="btn btn-primary"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+                      <button *ngIf="i===0" class="btn btn-primary" type="button" (click)="addFieldValue()">Add</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p *ngIf="error" style="color: #e90000;">{{ error }}</p>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button class="btn btn-primary mlr-5" id="addKpi" [disabled]="!addJobFrm.valid" (click)="addKpi(addJobFrm)">Submit</button>
+                  <button type="reset" id="resetForm" class="btn btn-info mlr-5" (click)="reset()">Reset</button>
+                  <button class="btn btn-danger mlr-5" id="cancel" (click)="cancel()">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- code for displaying the kpis for the selected job titles - sharmistha - 12-05-2019 - start -->
+  <div class="element-content">
+    <div class="job-box">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">			
+          <div class="table-responsive">
+              <table class="table table-bordered" [mfData]="filterData" #mf="mfDataTable" [mfRowsOnPage]="10">
+                <thead class="form-header">
+                  <tr>
+                    <th style="width: 4%; text-align: center;"></th>
+                    <th>Key Performance Indicator</th>
+                    <th>Job Title</th>
+                    <th>Min Rate</th>
+                    <th>Max Rate</th>
+                    <th>Is Default</th> 
+                  </tr>
+                </thead>
+                <tbody *ngIf="!filterData">
+                  <tr>
+                    <td colspan="7">
+                      No Records Found
+                    </td>                    
+                  </tr>
+                </tbody>
+                <tbody *ngIf="filterData">
+                  <tr>
+                    <td></td>
+                    <td><input type="text" placeholder="Search" (keyup)="search($event.target.value,'indicator')" class="search-filter form-control" id="searchIndicator"></td>
+                    <td><input type="text" placeholder="Search" (keyup)="search($event.target.value,'jobTitleName')" class="search-filter form-control" id="searchJobTitleName"></td>
+                    <td><input type="text" placeholder="Search" (keyup)="search($event.target.value,'minRating')" class="search-filter form-control" id="searchminRating"></td>
+                    <td><input type="text" placeholder="Search" (keyup)="search($event.target.value,'maxRating')" class="search-filter form-control" id="searchmaxRating"></td>
+                    <td></td>
+                  </tr>
+                  <ng-container *ngIf="availableRecords; else noData">
+                    <tr *ngFor="let kpi of mf.data, index as i">
+                      <td style="text-align: center;" >{{i+1}}</td>
+                      <td>{{ kpi.indicator | titlecase }}</td>
+                      <td>{{ kpi.jobTitle | titlecase }}</td>
+                      <td>{{ kpi.minRating }}</td>
+                      <td>{{ kpi.maxRating }}</td>
+                      <td><span *ngIf="kpi.defaultScale==true" class="badge badge-primary"> Yes </span><span *ngIf="kpi.defaultScale==false" class="badge badge-danger"> No </span></td>
+                    </tr>
+                  </ng-container>
+                  <ng-template #noData> 
+                    <tr>
+                      <td colspan="6" class="text-danger" style="text-align: center;">
+                        No Records Found 
+                      </td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+                <tfoot *ngIf="filterData">
+                  <tr>
+                    <td colspan="7"><mfBootstrapPaginator [rowsOnPageSet]="[5,10,25,35]"></mfBootstrapPaginator></td>
+                  </tr>
+                </tfoot>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- code for displaying the kpis for the selected job titles - sharmistha - 12-05-2019 - END -->
+</div>
+
+
+
+  
+<div class="loader_wrap" *ngIf="loading">
+  <div class="loader_inner_wrap"><img src="assets/images/loginloader.gif" alt="" id="loading"</div>
+</div>
+
+
+<div class="popupbox_wrap" *ngIf="isSuccess">
+  <div class="popupbox">
+    <div class="row"><button class="close" id="close" type="button" (click)="close()"><span class="close-label"><i class="fa fa-times"
+            aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span></button></div>
+    <p class="bg-success">{{ data.data }}</p>
+    <div class="row text-center">
+      <a class="btn btn-success mlr-5" id="viewAllKpis" routerLink="/kpis"><i class="fa fa-users" aria-hidden="true"></i> View all KPIs</a>
+    
+    </div>
+    <!--row-->
+  </div>
+  <!--popupbox-->
+</div>
+<!--popupbox_wrap-->
+
+
+<div class="popupbox_wrap" *ngIf="isFailure">
+  <div class="popupbox">
+    <div class="row"><button class="close" type="button" id="closeError" (click)="closePopup()"><span class="close-label"><i class="fa fa-times"
+            aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span></button></div>
+    <p class="bg-danger">{{ data.errorMessages }}</p>
+    <div class="row text-center">
+        <a class="btn btn-success" id="closeErrorPopup" routerLink="/kpis"><i class="fa fa-users" aria-hidden="true"></i> View all KPIs</a>
+    </div>
+    <!--row-->
+  </div>
+  <!--popupbox-->
+</div>
+<!--popupbox_wrap-->  

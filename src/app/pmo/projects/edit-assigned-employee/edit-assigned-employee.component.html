@@ -1,0 +1,112 @@
+<div class="content">
+    <div class="top-header">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 heading">
+          <h4>Assigned Employee(s) of {{projectInfo.project.projectName}}</h4>
+        </div>
+        <div class="col-md-6 col-lg-6 breadcrumb">
+          <ul class="breadcrumb-items">
+            <li><a routerLink='/dashboard'>Home</a></li>
+            <li>&nbsp;/&nbsp;</li>
+            <li>PMO</li>
+            <li>&nbsp;/&nbsp;</li>
+            <li><a routerLink='/projects'>Projects</a></li>
+            <li>&nbsp;/&nbsp;</li>
+            <li>Edit Assigned Employee</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="element-content">
+      <div class="job-box">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <form #assignProjectFrm="ngForm" name="form" (ngSubmit)="assignProjectFrm.form.valid" novalidate>
+                <ng-container *ngIf="projectInfo.users; else noUser">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead class="form-header">
+                            <tr>
+                              <th style="width: 5%"></th>
+                              <th>Employee Name</th>
+                              <th>Activity</th>
+                              <th>Status</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let userInfo of projectInfo.users, index as i">
+                                <td style="text-align: center;">{{i+1}}</td>
+                                <td>{{userInfo.user.firstName | titlecase}} {{userInfo.user.lastName | titlecase}}</td>
+                                <td>{{ userInfo.activity.name }}</td>
+                                <td>
+                                    <ng-container *ngIf="i==display; then b2 else b1"></ng-container>
+                                    <ng-template #b1>
+                                        <p *ngIf="userInfo.status == '1'">Active</p>
+                                        <p *ngIf="userInfo.status == '0'">Inactive</p>
+                                    </ng-template>
+                                    <ng-template #b2>
+                                        <select class="form-control mb-10" #editStatus name="status" [(ngModel)]="editEmpData.status" #status="ngModel" (change)="editsinglestatus(editStatus.value,i)">
+                                            <option value="" disabled selected>Select Status</option>
+                                            <option value="1">Active</option>
+                                            <option value="0">Inactive</option>
+                                        </select>
+                                    </ng-template>
+                                </td>
+                                <td>
+                                    <button type="button" class="tabledit-edit-button btn btn-primary" (click)="editStatus(userInfo)">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </ng-container>
+                <ng-template #noUser>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                            <td colspan="5" class="text-danger" style="text-align: center;">
+                                No Records Found
+                            </td>
+                            </tr>
+                        </table>
+                    </div>
+                </ng-template>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success mlr-5" id="editEmp" (click)="editEmp()">Submit</button>
+                <button (click)="cancel()" id="cancel" class="btn btn-danger mlr-5">Cancel</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="popupbox_wrap" *ngIf="isShowPopup">
+      <div class="popupbox" *ngIf="message">
+        <p class="bg-success">Assigned employee status updated successfully! </p>
+        <div class="row text-center">
+          <a class="btn btn-success" id="cancelPopup" routerLink="/projects"><i class="fa fa-users" aria-hidden="true"></i> View all Projects</a>
+        </div>
+      </div>
+  
+      <div class="popupbox" *ngIf="error">
+        <p class="bg-danger">Assigned employee status updation failed! </p>
+        <div class="row text-center">
+          <a class="btn btn-danger" id="closeError" (click)="closePopup()"><i class="fa fa-times" aria-hidden="true"></i> Close</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- loader start-->
+  <div class="loader_wrap" *ngIf="loading">
+    <div class="loader_inner_wrap">
+      <img src="../../../../assets/images/loginloader.gif" alt="" id="loading">
+    </div>
+  </div>
+  
+  <!-- loader end -->
+  

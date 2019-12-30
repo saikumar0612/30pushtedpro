@@ -1,0 +1,192 @@
+<div class="content">
+  <div class="top-header">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 heading">
+        <h4>
+          View Project
+          <span *ngIf="userPermissions.updateProjects" >
+              <button  type="button" [routerLink]="['/projects/edit-projects', cusInfo.projectId]" class="tabledit-edit-button btn btn-success" title="edit project">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </button>
+          </span>
+        </h4>
+      </div>
+      <div class="col-md-6 col-lg-6 breadcrumb">
+        <ul class="breadcrumb-items">
+          <li><a routerLink='/dashboard'>Home</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li>PMO</li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><a routerLink='/projects'>Projects</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li>View Project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="element-content">
+    <div class="job-box">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+          <div class="form-header">
+            <h5>View Project</h5>
+          </div>
+          <div class="padding-20">
+
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Project Name:</label>
+                <div class="col-sm-8">
+                  <p>{{ cusInfo.projectName }}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Customer Name:</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.customer.name}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Approval:</label>
+                <div class="col-sm-8">
+                  <p *ngIf="cusInfo.isApproved; else noApproval">Yes</p>
+                  <ng-template #noApproval>No</ng-template>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Internal Approver:</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.internalApprover.firstName | titlecase}} {{cusInfo.internalApprover.lastName | titlecase}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Primary Approver:</label>
+                <div class="col-sm-8">
+                  <p *ngIf="cusInfo.isPrimary; else noApproval">Internal</p>
+                  <ng-template #noApproval>External</ng-template>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">External Approver:</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.externalApprover.first_name | titlecase}} {{cusInfo.externalApprover.last_name | titlecase}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Start Date</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.startDate | date:"MM/dd/yyyy" }}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">End Date</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.endDate | date:"MM/dd/yyyy" }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Description:</label>
+                <div class="col-sm-8">
+                  <p>{{cusInfo.projectDesc}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-header">
+                <h5>Activities</h5>
+              </div>
+              <ng-container *ngIf="cusInfo.activities.length !== 0; else noData">
+                <div class="padding-20">  
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead class="form-header">
+                        <tr>
+                          <th style="width: 6%"></th>
+                          <th>Activity Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let activityinfo of cusInfo.activities, index as i">
+                          <td style="text-align: center;">{{i+1}}</td>
+                          <td>{{activityinfo.name}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-template #noData>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td colspan="2" class="text-danger" style="text-align: center;">
+                        No Records Found
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </ng-template>
+            </div>
+            <div class="col-md-6">
+              <div class="form-header">
+                <h5>Assigned Employees</h5>
+              </div>
+              <ng-container *ngIf="cusInfo.assignedEmployees; else noUser">
+                <div class="padding-20">  
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead class="form-header">
+                        <tr>
+                          <th style="width: 6%"></th>
+                          <th>Employee Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let userInfo of assignedEmployees, index as i">
+                          <td style="text-align: center;">{{i+1}}</td>
+                          <td>{{userInfo.user.firstName | titlecase}} {{userInfo.user.lastName | titlecase}} - <span *ngFor="let activity of userInfo.activities; let isLast=last">{{ activity.name }}<span class="list-format" *ngIf="!isLast">&#44;&nbsp;</span> </span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-template #noUser>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td colspan="2" class="text-danger" style="text-align: center;">
+                        No Records Found
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button (click)="cancel()" id="cancel" class="btn btn-danger mlr-5">Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader_wrap" *ngIf="loading">
+  <div class="loader_inner_wrap"><img src="../../../../assets/images/loginloader.gif" alt="" id="loading"></div>
+</div>

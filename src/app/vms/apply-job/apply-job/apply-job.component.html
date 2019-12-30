@@ -1,0 +1,178 @@
+<div class="container">
+        <main id="jf-main" class="jf-main jf-haslayout">
+            <div class="jf-dbsectionspace jf-haslayout">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="jf-dashboardbox jf-myappliedjobs">
+                            <div class="jf-dashboardboxtitle" style="padding: 15px 50px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h2>Job Applications</h2>
+                                        <span>Latest Jobs</span>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-sm-4">
+                                        <section id="search">
+                                            <input id="search-input" class="form-control input-lg" placeholder="Search Jobs / Skills " autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1" (keyup)="jobSearch($event.target.value)">
+                                            <label for="search-input"> <i class="fa fa-search" aria-hidden="true"></i><span class="sr-only"></span>
+                                            </label>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            <table [mfData]="resultJobs" #mf="mfDataTable" [mfRowsOnPage]="4" *ngIf="showresultJobs">
+                                <div class="jf-dashbboardcontent jf-myjobsapplications jf-myjobsapplicationsvtwo">
+                                    <ul>
+                                        <li *ngFor="let item of mf.data">
+                                            <div class="jf-featurejob">
+                                                <div class="jf-companycontent">
+                                                    <div class="jf-companyhead"> <a class="jf-btnjobtag jf-internship">{{item.employment_type}}</a>
+                                                    </div>
+                                                    <div class="jf-companyname">
+                                                        <h3>{{item.code}} - {{item.tech_title | uppercase}}</h3>
+                                                    </div>
+                                                    <div> <span><strong>Salary :</strong>{{item.external_bill_rate}}</span>
+                                                    </div>
+                                                    <div> <strong>Skills :</strong><span> {{item.skills}}</span>
+                                                    </div>
+                                                    <div> <strong>Description :</strong><span [innerHTML]="item.description |slice:0:70">{{item.description}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="jf-jobmatadata">
+                                                <li class="hover"> <a (click)="addtoWishList(item.code)" id="addWishList" title="addToFavourite"><em class="fa fa-heart-o"></em></a>
+                                                </li>
+                                                <li> <em class="ti-calendar"></em>
+                                                    <div class="jf-matacontent"> <span>Last Date To apply</span>
+                                                        <time>{{item.targetDate}}</time>
+                                                        <button class="btn btn-info" id="jobDetails" [routerLink]="['/job/jobdetails', item.code]"><i class="fa fa-external-link"></i> Read More</button>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <!-- #cc6763a8; --> <em class="ti-bell"></em>
+                                                    <div class="jf-matacontent" *ngIf="!item.applyStatus">
+                                                        <button class="btn btn-success" id="jobApply" (click)="jobApply(item.code)">Apply Job</button>
+                                                    </div>
+                                                    <div class="jf-matacontent" *ngIf="item.applyStatus">
+                                                        <button class="btn btn-success" disabled>Applied</button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <mfBootstrapPaginator [rowsOnPageSet]="[4,8,24,32]"></mfBootstrapPaginator>
+                                </div>
+                            </table>
+                            <table [mfData]="searchData" #mf="mfDataTable" [mfRowsOnPage]="4" *ngIf="showsearchData">
+                                <div class="jf-dashbboardcontent jf-myjobsapplications jf-myjobsapplicationsvtwo">
+                                    <ul>
+                                        <li *ngFor="let job of mf.data">
+                                            <div class="jf-featurejob">
+                                                <div class="jf-companycontent">
+                                                    <div class="jf-companyhead"> <a class="jf-btnjobtag jf-internship">{{job.employment_type}}</a>
+                                                    </div>
+                                                    <div class="jf-companyname">
+                                                        <h3>{{job.code}} - {{job.tech_title | uppercase}}</h3>
+                                                        <!-- <h6>{{job.company.name | uppercase}}</h6> -->
+                                                    </div>
+                                                    <div> <span><strong>Salary :</strong>{{job.external_bill_rate}}</span>
+                                                    </div>
+                                                    <div> <strong>Skills :</strong><span *ngFor="let x of job.skills"> {{x.skillName}}</span>
+                                                    </div>
+                                                    <div> <strong>Description :</strong><span [innerHTML]="job.description |slice:0:70">{{job.description}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="jf-jobmatadata">
+                                                <li class="hover"> <a (click)="addtoWishList(job.code)" id="addWishList" title="addToFavourite"><em class="fa fa-heart-o"></em></a>
+                                                </li>
+                                                <li> <em class="ti-calendar"></em>
+                                                    <div class="jf-matacontent"> <span>Last Date To apply</span>
+                                                        <time>{{job.targetDate}}</time>
+                                                        <button class="btn btn-info" id="jobDetails" [routerLink]="['/job/jobdetails', job.code]"><i class="fa fa-external-link"></i> Read More</button>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <!-- #cc6763a8; --> <em class="ti-bell"></em>
+                                                    <div class="jf-matacontent" *ngIf="!job.applyStatus">
+                                                        <button class="btn btn-success" id="jobApply" (click)="jobApply(job.code)">Apply Job</button>
+                                                    </div>
+                                                    <div class="jf-matacontent" *ngIf="job.applyStatus">
+                                                        <button class="btn btn-success" disabled>Applied</button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <mfBootstrapPaginator [rowsOnPageSet]="[4,8,24,32]"></mfBootstrapPaginator>
+                                </div>
+                            </table>
+                            <div *ngIf="noData">
+                                <div style="text-align: center">
+                                    <h4>No Records Found</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="popupbox_wrap" *ngIf="isSuccess">
+        <div class="popupbox">
+            <div class="row">
+                <button id="closePopup" class="close" type="button" (click)="close()"><span class="close-label"><i class="fa fa-times"
+                      aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span>
+                </button>
+            </div>
+            <p class="bg-success">{{ data.data }}</p>
+            <!--row-->
+        </div>
+    </div>
+    <!--popupbox_wrap-->
+    <div class="popupbox_wrap" *ngIf="isFailure">
+        <div class="popupbox">
+            <div class="row">
+                <button class="close" type="button" (click)="closePopup()"><span class="close-label"><i class="fa fa-times" id="closebtn"
+                      aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span>
+                </button>
+            </div>
+            <p class="bg-success">{{ data.errorMessages }}</p>
+        </div>
+        <!--popupbox-->
+    </div>
+    <!--popupbox_wrap-->
+    <div class="popupbox_wrap" *ngIf="isSuccess1">
+        <div class="popupbox">
+            <div class="row">
+                <button id="closePopup1" class="close" type="button" (click)="close1()"><span class="close-label"><i class="fa fa-times"
+                          aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span>
+                </button>
+            </div>
+            <p class="bg-success">{{ result.data }}</p>
+        </div>
+        <!--popupbox-->
+    </div>
+    <!--popupbox_wrap-->
+    <div class="popupbox_wrap" *ngIf="isFailure1">
+        <div class="popupbox">
+            <div class="row">
+                <button class="close" type="button" (click)="closePopup1()"><span class="close-label"><i class="fa fa-times" id="closebtn1"
+                            aria-hidden="true"></i> Close</span><span class="os-icon os-icon-close"></span>
+                </button>
+            </div>
+            <p class="bg-success">{{ result.errorMessages }}</p>
+            <!--row-->
+        </div>
+        <!--popupbox-->
+    </div>
+    <!--popupbox_wrap-->
+    <div class="loader_wrap" *ngIf="loading">
+        <div class="loader_inner_wrap">
+            <img src="../../../assets/images/loginloader.gif" alt="">
+        </div>
+    </div>

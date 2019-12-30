@@ -1,0 +1,567 @@
+<div class="top-nav row menu-position-top">
+  <div class="col-md-10 col-lg-10 col-sm-10">
+    <div class="logo">
+      <a routerLink="/dashboard"><img src="{{file1_input}}" alt="icon" style="max-width: 100%; max-height: 100%;"></a>
+    </div>
+    <ul class="main-menu" *ngIf="currentUser.userType.id==='3'">
+      <li class="has-sub-menu" *ngIf="currentUser.isAdmin">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/users',false) || router.isActive('/user-roles',false) || router.isActive('/job-titles',false) || router.isActive('/pay-grades',false) || router.isActive('/employment-status',false) || router.isActive('/employee-type',false) || router.isActive('/job-categories',false) || router.isActive('/skills',false) || router.isActive('/education',false) || router.isActive('/licenses',false) || router.isActive('/languages',false) || router.isActive('/memberships',false) || router.isActive('/leave-period',false) || router.isActive('/leave-type',false) || router.isActive('/entitlements',false) || router.isActive('/reports',false) || router.isActive('/assign-leave',false) || router.isActive('/accrual/accruals',false)">
+          <div class="icon-w">
+            <em class="fa fa-database" aria-hidden="true"></em>
+          </div>
+          <span>Administration</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Administration</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li class="has-level-2-menu"
+                *ngIf="userPermissions.readUser || userPermissions.readRole || userPermissions.createUser || userPermissions.createRole" [routerLinkActive]="['active']">
+                <a style="cursor: pointer;">UAM
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">UAM</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li *ngIf="userPermissions.readUser"[routerLinkActive]="['active']"><a routerLink="/users">Users</a></li>
+                        <li *ngIf="userPermissions.readRole"[routerLinkActive]="['active']"><a routerLink="/user-roles">User Role</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="has-level-2-menu"
+                *ngIf="(userPermissions.readJobTitle || userPermissions.readPayGrade || userPermissions.readEmployeestatus || userPermissions.readJobCategorie || userPermissions.readWorkShifts || userPermissions.readEmployeeType)"[routerLinkActive]="['active']">
+                <a style="cursor: pointer;">Job
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Job</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li *ngIf="userPermissions.readJobCategorie" [routerLinkActive]="['active']"><a routerLink="/job-categories">Departments</a>
+                        </li>
+                        <li *ngIf="userPermissions.readJobTitle" [routerLinkActive]="['active']"><a routerLink="/job-titles">Job Titles</a></li>
+                        <li *ngIf="userPermissions.readPayGrade" [routerLinkActive]="['active']"><a routerLink="/pay-grades">Pay Grades</a></li>
+                        <li *ngIf="userPermissions.readEmployeestatus" [routerLinkActive]="['active']"><a routerLink="/employment-status">Employee
+                            status</a></li>
+                        <li *ngIf="userPermissions.readEmployeeType" [routerLinkActive]="['active']"><a routerLink="/employee-type">Employee Type</a>
+                        </li>
+                        <li *ngIf="userPermissions.readWorkShifts" [routerLinkActive]="['active']"><a routerLink="/work-shifts">Work Shifts</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="has-level-2-menu"
+                *ngIf="(userPermissions.readSkills || userPermissions.readEducation || userPermissions.readLicenses || userPermissions.readLanguages || userPermissions.readMemberships)" [routerLinkActive]="['active']">
+                <a style="cursor: pointer;">Qualification
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Qualification</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li *ngIf="userPermissions.readSkills" [routerLinkActive]="['active']"><a routerLink="/skills">Skills</a></li>
+                        <li *ngIf="userPermissions.readEducation" [routerLinkActive]="['active']"><a routerLink="/education">Education</a></li>
+                        <li *ngIf="userPermissions.readLicenses" [routerLinkActive]="['active']"><a routerLink="/licenses">Licenses</a></li>
+                        <li *ngIf="userPermissions.readLanguages" [routerLinkActive]="['active']"><a routerLink="/languages">Languages</a></li>
+                        <li *ngIf="userPermissions.readMemberships" [routerLinkActive]="['active']"><a routerLink="/memberships">Memberships</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="has-level-2-menu"
+              *ngIf="(submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements 
+            ||submenuPermission.reports || submenuPermission.leaveList || 
+            submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) &&
+            (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave || userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod || userPermissions.readEntitlements || userPermissions.addEntitlements || userPermissions.readLeaveReports || userPermissions.readAccural || userPermissions.addAccrual || userPermissions.editAccrual)"[routerLinkActive]="['active']">
+              <a style="cursor: pointer;">Leave Configuration
+                <div class="level-2-menu">
+                  <div class="sub-menu-header">Leave Configuration</div>
+                  <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                  <div class="sub-menu-i">
+                    <ul class="sub-menu">
+                      <li [routerLinkActive]="['active']"> <a routerLink="/leave-period" *ngIf="submenuPermission.leavePeriod  &&
+                        (userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod) ">Leave Period</a>
+                      </li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/leave-type"
+                          *ngIf="submenuPermission.leaveType  &&
+                        (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave) ">Leave Type</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/entitlements" *ngIf="submenuPermission.entitlements  &&
+                        (userPermissions.readEntitlements || userPermissions.addEntitlements) ">Entitlements</a></li> 
+                      <li [routerLinkActive]="['active']"><a routerLink="/reports" *ngIf="submenuPermission.reports  &&
+                        (userPermissions.readLeaveReports ) ">Reports</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/assign-leave" *ngIf="userPermissions.createAssignLeave">Assign Leave</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/accrual/accruals" *ngIf="userPermissions.addAccrual || userPermissions.editAccrual || userPermissions.readAccural">Leave Accrual</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+              <!-- <li class="has-level-2-menu"
+                *ngIf="(submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements 
+              ||submenuPermission.reports || submenuPermission.leaveList || 
+              submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) &&
+              (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave || userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod || userPermissions.readEntitlements || userPermissions.addEntitlements)">
+                <a style="cursor: pointer;">Leave Configuration
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Leave Configuration</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li> <a routerLink="/leave-period" *ngIf="submenuPermission.leavePeriod  &&
+                          (userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod) ">Leave Period</a>
+                        </li>
+                        <li><a routerLink="/leave-type"
+                            *ngIf="submenuPermission.leaveType  &&
+                          (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave) ">Leave Type</a></li>
+                        <li><a routerLink="/entitlements" *ngIf="submenuPermission.entitlements  &&
+                          (userPermissions.readEntitlements || userPermissions.addEntitlements) ">Entitlements</a></li>
+                        <li><a routerLink="/reports">Reports</a></li>
+                        <li><a routerLink="/assign-leave">Assign Leave</a></li>
+                        <li><a routerLink="/accrual/accruals">Leave Accrual</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li> -->
+
+              <!-- <li class="has-level-2-menu" *ngIf="adminRole">
+                <a routerLink="/bulk-email/bulkEmail">
+                  Bulk Emailing
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu" *ngIf="userPermissions.createCompanyInfo || userPermissions.readTheme || userPermissions.ReadBranch || userPermissions.readWorkWeek || userPermissions.updateWorkWeek || userPermissions.readHolidays || userPermissions.readUser || userPermissions.readRole || userPermissions.readJobTitle || userPermissions.readPayGrade || userPermissions.readEmployeestatus || userPermissions.readJobCategorie || userPermissions.readWorkShifts || userPermissions.readEmployeeType || userPermissions.readSkills || userPermissions.readEducation || userPermissions.readLicenses || userPermissions.readLanguages || userPermissions.readMemberships || userPermissions.readLeave || userPermissions.readLeavePeriod || userPermissions.readEntitlements" [routerLinkActive]="['active']">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/companyInfo',false) || router.isActive('/companyPrefix',false) || router.isActive('/theme-settings',false) || router.isActive('/manage-branch',false) || router.isActive('/work-week',false) || router.isActive('/holidays',false)">
+          <div class="icon-w">
+            <em class="fa fa-cog" aria-hidden="true"></em>
+          </div>
+          <span>Config</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Config</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li *ngIf="userPermissions.createCompanyInfo" [routerLinkActive]="['active']"><a routerLink="/companyInfo">Company Info</a></li>
+              <li *ngIf="userPermissions.createCompanyInfo" [routerLinkActive]="['active']"><a routerLink="/companyPrefix">Company Number Formats</a>
+              </li>
+              <li *ngIf="currentUser.role[0].roleName" [routerLinkActive]="['active']"><a routerLink="/theme-settings">Theme Settings</a></li>
+              <li *ngIf="userPermissions.ReadBranch" [routerLinkActive]="['active']"><a routerLink="/manage-branch">Manage Branches</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink="/work-week" *ngIf="(userPermissions.readWorkWeek  || userPermissions.updateWorkWeek) ">Work week</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink="/holidays"
+                  *ngIf="(userPermissions.readHolidays || userPermissions.updateHolidays  || userPermissions.createHolidays) ">Holidays</a>
+              </li>
+              <li [routerLinkActive]="['active']" class="has-level-2-menu" *ngIf="(userPermissions.readUser || userPermissions.readRole || userPermissions.createUser || userPermissions.createRole) && (!currentUser.isAdmin)">
+                <a style="cursor: pointer;">UAM
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">UAM</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li [routerLinkActive]="['active']" *ngIf="userPermissions.readUser"><a routerLink="/users">Users</a></li>
+                        <li [routerLinkActive]="['active']" *ngIf="userPermissions.readRole"><a routerLink="/user-roles">User Role</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="has-level-2-menu" *ngIf="(userPermissions.readJobTitle || userPermissions.readPayGrade || userPermissions.readEmployeestatus || userPermissions.readJobCategorie || userPermissions.readWorkShifts || userPermissions.readEmployeeType) && (!currentUser.isAdmin)" [routerLinkActive]="['active']">
+                <a style="cursor: pointer;">Job
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Job</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li *ngIf="userPermissions.readJobCategorie" [routerLinkActive]="['active']"><a routerLink="/job-categories">Departments</a>
+                        </li>
+                        <li *ngIf="userPermissions.readJobTitle" [routerLinkActive]="['active']"><a routerLink="/job-titles">Job Titles</a></li>
+                        <li *ngIf="userPermissions.readPayGrade" [routerLinkActive]="['active']"><a routerLink="/pay-grades">Pay Grades</a></li>
+                        <li *ngIf="userPermissions.readEmployeestatus" [routerLinkActive]="['active']"><a routerLink="/employment-status">Employee
+                            status</a></li>
+                        <li *ngIf="userPermissions.readEmployeeType" [routerLinkActive]="['active']"><a routerLink="/employee-type">Employee Type</a>
+                        </li>
+                        <li *ngIf="userPermissions.readWorkShifts" [routerLinkActive]="['active']"><a routerLink="/work-shifts">Work Shifts</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="has-level-2-menu" *ngIf="(userPermissions.readSkills || userPermissions.readEducation || userPermissions.readLicenses || userPermissions.readLanguages || userPermissions.readMemberships) && (!currentUser.isAdmin)" [routerLinkActive]="['active']">
+                <a style="cursor: pointer;">Qualification
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Qualification</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li *ngIf="userPermissions.readSkills" [routerLinkActive]="['active']"><a routerLink="/skills">Skills</a></li>
+                        <li *ngIf="userPermissions.readEducation" [routerLinkActive]="['active']"><a routerLink="/education">Education</a></li>
+                        <li *ngIf="userPermissions.readLicenses" [routerLinkActive]="['active']"><a routerLink="/licenses">Licenses</a></li>
+                        <li *ngIf="userPermissions.readLanguages" [routerLinkActive]="['active']"><a routerLink="/languages">Languages</a></li>
+                        <li *ngIf="userPermissions.readMemberships" [routerLinkActive]="['active']"><a routerLink="/memberships">Memberships</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="has-level-2-menu"
+              *ngIf="(submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements 
+            ||submenuPermission.reports || submenuPermission.leaveList || 
+            submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) &&
+            (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave || userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod || userPermissions.readEntitlements || userPermissions.addEntitlements || userPermissions.readLeaveReports || userPermissions.readAccural || userPermissions.addAccrual || userPermissions.editAccrual)  && (!currentUser.isAdmin)" [routerLinkActive]="['active']">
+              <a style="cursor: pointer;">Leave Configuration
+                <div class="level-2-menu">
+                  <div class="sub-menu-header">Leave Configuration</div>
+                  <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                  <div class="sub-menu-i">
+                    <ul class="sub-menu">
+                      <li [routerLinkActive]="['active']"> <a routerLink="/leave-period" *ngIf="submenuPermission.leavePeriod  &&
+                        (userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod) ">Leave Period</a>
+                      </li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/leave-type"
+                          *ngIf="submenuPermission.leaveType  &&
+                        (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave) ">Leave Type</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/entitlements" *ngIf="submenuPermission.entitlements  &&
+                        (userPermissions.readEntitlements || userPermissions.addEntitlements) ">Entitlements</a></li> 
+                      <li [routerLinkActive]="['active']"><a routerLink="/reports" *ngIf="submenuPermission.reports  &&
+                        (userPermissions.readLeaveReports ) ">Reports</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/assign-leave" *ngIf="userPermissions.createAssignLeave">Assign Leave</a></li>
+                      <li [routerLinkActive]="['active']"><a routerLink="/accrual/accruals" *ngIf="userPermissions.addAccrual || userPermissions.editAccrual || userPermissions.readAccural">Leave Accrual</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            </li>
+              <!-- <li class="has-level-2-menu" *ngIf="((submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements ||submenuPermission.reports || submenuPermission.leaveList || submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) && (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave || userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod || userPermissions.readEntitlements || userPermissions.addEntitlements)) && (!currentUser.isAdmin)">
+                <a style="cursor: pointer;">Leave Configuration
+                  <div class="level-2-menu">
+                    <div class="sub-menu-header">Leave Configuration</div>
+                    <div class="sub-menu-icon"><em class="fa fa-cog" aria-hidden="true"></em></div>
+                    <div class="sub-menu-i">
+                      <ul class="sub-menu">
+                        <li> <a routerLink="/leave-period" *ngIf="submenuPermission.leavePeriod  &&
+                          (userPermissions.readLeavePeriod || userPermissions.updateLeavePeriod) ">Leave Period</a>
+                        </li>
+                        <li><a routerLink="/leave-type"
+                            *ngIf="submenuPermission.leaveType  &&
+                          (userPermissions.readLeave || userPermissions.createLeave || userPermissions.updateLeave) ">Leave Type</a></li>
+                        <li><a routerLink="/entitlements" *ngIf="submenuPermission.entitlements  &&
+                          (userPermissions.readEntitlements || userPermissions.addEntitlements) ">Entitlements</a></li>
+                        <li><a routerLink="/reports">Reports</a></li>
+                        <li><a routerLink="/assign-leave">Assign Leave</a></li>
+                        <li><a routerLink="/accrual/accruals">Leave Accrual</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="userPermissions.readTerminationReasons || userPermissions.readOrganizationalKpi || userPermissions.readTermsConditions || userPermissions.readOfficialDocuments || userPermissions.readOfferLetter || userPermissions.readPrerequisiteDocs" [routerLinkActive]="['active']">
+        <a style="cursor: pointer;"  [class.active]="router.isActive('/organization-kpis',false) || router.isActive('/terminating-resons',false) || router.isActive('/terms&conditions',false) || router.isActive('/office-documents',false) || router.isActive('/orgChart',false) || router.isActive('/offer-letter',false) || router.isActive('/prerequisites',false)" >
+          <div class="icon-w">
+            <em class="fa fa-hand-o-right" aria-hidden="true"></em>
+          </div>
+          <span>Employee Handbook</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Employee Handbook</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li [routerLinkActive]="['active']" class="selected has-sub-sub-menu" *ngIf="userPermissions.readOrganizationalKpi">
+                <a routerLink="/organization-kpis">Organizational KPIs</a>
+              </li>
+              <li [routerLinkActive]="['active']" *ngIf="userPermissions.readTerminationReasons"><a routerLink="/terminating-resons">Termination
+                  Reasons</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="userPermissions.readTermsConditions"><a routerLink="/terms&conditions">Terms & Conditions</a>
+              </li>
+              <li [routerLinkActive]="['active']" *ngIf="userPermissions.readOfficialDocuments"><a routerLink="/office-documents">Official Documents</a>
+              </li>
+              <li [routerLinkActive]="['active']"><a routerLink="/orgChart">Organization Chart</a>
+              </li>
+              <li [routerLinkActive]="['active']" *ngIf="userPermissions.readOfferLetter"><a routerLink="/offer-letter">Offer Letters</a>
+              </li>
+              <li [routerLinkActive]="['active']" *ngIf="userPermissions.readPrerequisiteDocs"><a routerLink="/prerequisites/prequisite-list">Prerequisites</a>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu" *ngIf="userPermissions.readJobDetails || userPermissions.readSalaryComponent || userPermissions.readUserReports" [routerLinkActive]="['active']">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/usersView',false) || router.isActive('/usersView/userReports',false)">
+          <div class="icon-w">
+            <em class="fa fa-address-book-o" aria-hidden="true"></em>
+          </div>
+          <span>PIM</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">PIM</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li *ngIf="userPermissions.readJobDetails || userPermissions.readSalaryComponent || userPermissions.assignOfferLetter" [routerLinkActive]="['active']"><a
+                routerLink="/usersView">Employee List</a></li>
+            <li *ngIf="userPermissions.readUserReports" [routerLinkActive]="['active']"> <a routerLink="/usersView/userReports">Employee Reports</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="(submenuPermission.clientCompany|| submenuPermission.vendorCompany || submenuPermission.clientCompanyContact|| submenuPermission.vendorCompanyContact )&&(userPermissions.readClientCompany || userPermissions.readVendorCompany || userPermissions.readClientContacts || userPermissions.createVendorContacts)">
+        <a style="cursor: pointer;"  [class.active]="router.isActive('/customers',false) || router.isActive('/vendors',false) || router.isActive('/company-contacts',false) || router.isActive('/vendors-contacts',false)">
+          <div class="icon-w">
+            <em class="fa fa-handshake-o" aria-hidden="true"></em>
+          </div>
+          <span>CRM</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">CRM</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.clientCompany && userPermissions.readClientCompany"><a
+                  routerLink="/customers">Client Company</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.vendorCompany && userPermissions.readVendorCompany"><a
+                  routerLink="/vendors">Vendor Company</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.clientCompanyContact && userPermissions.readClientContacts"><a
+                  routerLink="/company-contacts">Client Company Contacts</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.vendorCompanyContact && userPermissions.readVendorContacts"><a
+                  routerLink="/vendors-contacts">Vendor Company Contacts</a></li>
+              <li [routerLinkActive]="['active']">
+                <a href=" http://162.254.209.129/phpListAcc/lists/admin" target="blank">PHP List</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="(submenuPermission.jobPosting || submenuPermission.candidates)&&(userPermissions.createJob || userPermissions.readCandidates)">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/jobs',false) || router.isActive('/candidate',false)">
+          <div class="icon-w">
+            <em class="fa fa-user-plus" aria-hidden="true"></em>
+          </div>
+          <span>Recruitment</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Recruitment</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.jobPosting  && userPermissions.readJob"><a routerLink="/jobs">Job Posting</a>
+              </li>
+              <li  [routerLinkActive]="['active']" *ngIf="submenuPermission.candidates && userPermissions.readCandidates"><a
+                  routerLink="/candidate">Candidates</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="(submenuPermission.projects || submenuPermission.assignProjects || submenuPermission.myTimesheets || submenuPermission.employeeTimesheet)&&(userPermissions.readTimesheets || userPermissions.readEmployeeTimesheets || userPermissions.readProjects)">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/projects/projects',false) || router.isActive('/projects/add-projects',false)|| router.isActive('/projects/view-projects',false) || router.isActive('/projects/edit-projects',false) || router.isActive('/projects/edit-assigned-employees',false) || router.isActive('/projects/assign-project',false) || router.isActive('/timesheets/view-week-timesheet',false) || router.isActive('/timesheets/emp-timesheets',false) || router.isActive('/timesheets/employee-report',false)">
+          
+          <div class="icon-w">
+            <em class="fa fa-paperclip" aria-hidden="true"></em>
+            
+          </div>
+          <span>PMO</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">PMO</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.projects && userPermissions.readProjects"><a
+                  routerLink="/projects/projects">Projects</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.assignProjects && userPermissions.readProjects"><a
+                  routerLink="/projects/assign-project">Assign Project</a></li>
+              <li [routerLinkActive]="['active']" *ngIf=" submenuPermission.myTimesheets &&userPermissions.readTimesheets"><a
+                  routerLink="/timesheets/view-week-timesheet">My Timesheets</a></li>
+              <li [routerLinkActive]="['active']" *ngIf="submenuPermission.employeeTimesheet &&userPermissions.readEmployeeTimesheets"><a
+                  routerLink="/timesheets/emp-timesheets">Employee Timesheets</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="(submenuPermission.kPIs || submenuPermission.manageReviews || submenuPermission.myReviews ||submenuPermission.employeeReviews )&&(userPermissions.readKpi || userPermissions.readReview || userPermissions.readEmployeeReviews || userPermissions.readSupervisorReviews)">
+        <a style="cursor: pointer;"  [class.active]="router.isActive('/kpis',false) || router.isActive('/reviews/manage-reviews',false) || router.isActive('/reviews/review-list',false) || router.isActive('/reviews/my-reviews',false) || router.isActive('/reviews/add-review',false) || router.isActive('/reviews/edit-review',false) ">
+          <div class="icon-w">
+            <em class="fa fa-sign-language" aria-hidden="true"></em>
+          </div>
+          <span>Performance</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Performance</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li [routerLinkActive]="['active']"><a routerLink="/kpis" *ngIf="submenuPermission.kPIs &&userPermissions.readKpi">KPIs</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink="/reviews/manage-reviews"
+                  *ngIf=" submenuPermission.manageReviews &&userPermissions.readReview">Manage Reviews</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink="/reviews/my-reviews"
+                  *ngIf="submenuPermission.myReviews && userPermissions.readEmployeeReviews">My Reviews</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink="/reviews/review-list"
+                  *ngIf="submenuPermission.employeeReviews && userPermissions.readSupervisorReviews">Employee
+                  Reviews</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-sub-menu"
+        *ngIf="(submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements ||submenuPermission.reports || submenuPermission.leaveList || submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) && (userPermissions.readAssignLeave  || userPermissions.createUserApplyLeave ||userPermissions.updateUserApplyLeave)">
+        <a style="cursor: pointer;" [class.active]="router.isActive('/leaves/apply-leave',false) || router.isActive('/leaves/myleave-list',false) || router.isActive('/leaves/my-entitlements',false) || router.isActive('/leaves/my-reports',false) || router.isActive('/leaves/leave-list',false)">
+          <div class="icon-w">
+            <em class="fa fa-calendar-check-o" aria-hidden="true"></em>
+          </div>
+          <span>Leaves</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Leaves</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li  [routerLinkActive]="['active']"><a routerLink="/leaves/apply-leave">Apply Leave</a></li>
+              <li  [routerLinkActive]="['active']"><a routerLink="/leaves/myleave-list">My Leaves</a></li>
+              <li  [routerLinkActive]="['active']"><a routerLink="/leaves/my-entitlements">My Entitlements</a></li>
+              <li  [routerLinkActive]="['active']"><a routerLink="/leaves/my-reports">My Reports</a></li>
+              <li  [routerLinkActive]="['active']"><a routerLink="/leaves/leave-list" *ngIf="userPermissions.readAssignLeave || userPermissions.updateUserApplyLeave">Employee Leaves</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <!-- <li class="has-sub-menu"
+        *ngIf="(submenuPermission.leavePeriod || submenuPermission.leaveType || submenuPermission.entitlements ||submenuPermission.reports || submenuPermission.leaveList || submenuPermission.assignLeave || submenuPermission.applyLeave ||submenuPermission.myEntitlements) && (userPermissions.readAssignLeave  || userPermissions.createUserApplyLeave ||userPermissions.updateUserApplyLeave)">
+        <a style="cursor: pointer;">
+          <div class="icon-w">
+            <em class="fa fa-calendar-check-o" aria-hidden="true"></em>
+          </div>
+          <span>Leaves</span>
+        </a>
+        <div class="sub-menu-w">
+          <div class="sub-menu-header">Leaves</div>
+          <div class="sub-menu-icon"><em class="os-icon os-icon-layers"></em>
+          </div>
+          <div class="sub-menu-i">
+            <ul class="sub-menu">
+              <li><a routerLink="/leaves/apply-leave">Apply Leave</a></li>
+              <li><a routerLink="/leaves/myleave-list">My Leaves</a></li>
+              <li><a routerLink="/leaves/my-entitlements">My Entitlements</a></li>
+              <li><a routerLink="/leaves/my-reports">My Reports</a></li>
+              <li><a routerLink="/leaves/leave-list">Employee Leaves</a></li>
+            </ul>
+          </div>
+        </div>
+      </li> -->
+
+    </ul>
+  </div>
+  <div class="col-md-2 col-lg-2 col-sm-2">
+    <div class="top-bar">
+      <div class="top-menu-controls">
+
+        <!-- removed search bar from top menu - sharmistha - 09-13-2019 -->
+
+        <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left" *ngIf="notificationLength>0">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <div class="new-messages-count" *ngIf="notificationLength>0">{{ notificationLength }}</div>
+          <div class="os-dropdown light message-list" *ngIf="notificationLength>0">
+              <div class="notification-header">Notifications</div>
+            <ul *ngIf="notificationLength>0">
+              <li *ngFor="let item of notifications">
+                <a style="background-color: #0000000f;" *ngIf="item.isNewFlag" (click)="notificationClicked(item.id, item.action_url)"><strong>{{item.action}}</strong></a>
+                <a *ngIf="!item.isNewFlag" (click)="notificationClicked(item.id, item.action_url)">{{item.action}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="logged-user-w">
+          <div class="logged-user-i">
+
+            <ng-container *ngIf="currentUser.userType.name === 'employee'; else displayPic">
+              <img alt="" src="assets/images/avatar.png" *ngIf="picturedata.image == ''"
+                style="width: 35px; height: 35px;" alt="Profile Picture">
+
+              <img src="{{picturedata.image}}" alt="Profile Picture" *ngIf="picturedata.image != ''"
+                style="width: 35px; height: 35px;">
+            </ng-container>
+            <ng-template #displayPic>
+              <img alt="" src="assets/images/avatar.png" style="width: 35px; height: 35px;">
+            </ng-template>
+
+            <div class="logged-user-menu color-style-bright">
+              <div class="logged-user-avatar-info">
+                <ng-container *ngIf="currentUser.userType.name === 'employee'; else profilePic">
+                  <img alt="profile" src="assets/images/avatar.png" *ngIf="picturedata.image == ''"
+                    style="width: 30px; margin-right: 10px;">
+
+                  <img src="{{picturedata.image}}" alt="profile" *ngIf="picturedata.image != ''"
+                    style="width: 30px; margin-right: 10px;">
+                </ng-container>
+                <ng-template #profilePic>
+                  <img alt="" src="assets/images/avatar.png" style="width: 30px; margin-right: 10px;">
+                </ng-template>
+
+
+
+                <div class="logged-user-info-w">
+                  <div class="logged-user-name">{{currentUser.first_name}}</div>
+                  <div class="logged-user-role">{{currentUser.empType.employeeType}}</div>
+                </div>
+              </div>
+              <div class="bg-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+              <ul>
+                <li *ngIf="currentUser.userType.name === 'employee'"><a routerLink="/myInfo"><i class="fa fa-user"
+                      aria-hidden="true"></i><span>Personal
+                      Details</span></a></li>
+                <li *ngIf="currentUser.userType.name === 'employee'"><a routerLink="/myInfo/personalSettings"><i
+                      class="fa fa-user-circle-o" aria-hidden="true"></i><span>Profile Settings</span></a></li>
+                <li>
+                  <a routerLink="/myInfo/password">
+                  <i class="fa fa-key" aria-hidden="true"></i>
+                  <span>Change Password</span>
+                  </a>
+                </li>
+                <li><a href="javascript:void(0)" (click)="appLogout()"><i class="fa fa-sign-out"
+                      aria-hidden="true"></i><span>Logout</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left"  *ngIf="currentUser.userType.name === 'employee'">
+          <a (click)="sideNavService.toggleSideNav()"><i class="fa fa-bars"></i></a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
