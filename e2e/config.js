@@ -1,3 +1,4 @@
+
 var jasmineReporters = require('jasmine-reporters');
 var htmlReporter = require('protractor-html-reporter-2');
 var fs = require('fs-extra');
@@ -17,35 +18,63 @@ exports.config = {
     //    'maxInstances': 2
     //},
 
+    //multiCapabilities: [
 
-   // specs: ['F:/Jasmine/CRM/vendorcompany/Addanothervendorspec.js'],
-    
+      
+    // {
+    //    'browserName': 'chrome',
+    // },
+    // {
+    //    'browserName': 'firefox',
+    //    'moz:firefoxOptions':
+    //     {
+    //        'args': ['--safe-mode']
+    //     }
+
+    //    },
+
+    //    //{
+    //    //    'browserName': 'safari',
+    //    //},
+
+
+    //  {
+    //        'browserName': 'internet explorer',
+    //        'platform': 'ANY',
+    //        'version': '11'
+    //  }
+  
+    //],
+
+    specs: ['F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'],
+
     //suites:
     //{
-    //    smoke: ['F:/Jasmine/CRM/ClientCompany/clientcompanyspec.js', 'F:/Jasmine/CRM/ClientCompany/Addanotherclientspec.js', 'F:/Jasmine/CRM/ClientCompany/editclientcompanyspec.js', 'F:/Jasmine/CRM/ClientCompany/clientcompanysearchspec.js', 'F:/Jasmine/CRM/ClientCompany/Clientresetspec.js',
-    //        'F:/Jasmine/CRM/Clientcompanycontact/addanotherclientcompnycntspec.js', 'F:/Jasmine/CRM/Clientcompanycontact/addclientcompanycontspec.js', 'F:/Jasmine/CRM/Clientcompanycontact/clientcmnycontresetspec.js', 'F:/Jasmine/CRM/Clientcompanycontact/clientcmnycontsearchspec.js', 'F:/Jasmine/CRM/Clientcompanycontact/editclientcmnycontspec.js',
-    //        'F:/Jasmine/CRM/vendorcompany/Addanothervendorspec.js', 'F:/Jasmine/CRM/vendorcompany/addvendorspec.js', 'F:/Jasmine/CRM/vendorcompany/Editvendorcompanyspec.js', 'F:/Jasmine/CRM/vendorcompany/vendorcompanysearchspec.js', 'F:/Jasmine/CRM/vendorcompany/vendorResetspec.js',
-    //        'F:/Jasmine/CRM/vendorcompanycontact/Addanothervendorcmnyspec.js', 'F:/Jasmine/CRM/vendorcompanycontact/addvendorcmnycontactspec.js', 'F:/Jasmine/CRM/vendorcompanycontact/editvendorcomnycontspec.js', 'F:/Jasmine/CRM/vendorcompanycontact/vendorcmnycontresetspec.js','F:/Jasmine/CRM/vendorcompanycontact/vendorcmnycontsearchspec.js'],
-       
+    //    smoke: ['F:/Jasmine/ConfigModule/company_info/companyinfospec.js'],
     //},
 
-    suites:
-    {
-        // smoke: ['H:/Jasmine/CRM/vendorcompany/Addanothervendorspec.js','H:/Jasmine/CRM/vendorcompany/vendorcompanysearchspec.js', 'H:/Jasmine/CRM/vendorcompany/vendorResetspec.js', 'H:/Jasmine/CRM/vendorcompanycontact/vendorcmnycontresetspec.js', 'H:/Jasmine/CRM/vendorcompanycontact/vendorcmnycontsearchspec.js',
-        //     'H:/Jasmine/CRM/Clientcompanycontact/clientcmnycontresetspec.js', 'H:/Jasmine/CRM/Clientcompanycontact/clientcmnycontsearchspec.js', 'H:/Jasmine/CRM/ClientCompany/clientcompanysearchspec.js', 'H:/Jasmine/CRM/ClientCompany/Clientresetspec.js'],
-        smoke: ['H:/jenkins/workspace/newproject/e2e/company_info/companyinfospec.js','H:/jenkins/workspace/newproject/e2e/company_number_formats/companynumberformatspec.js','H:/jenkins/workspace/newproject/e2e/Holidays/AddHolidayspec.js','H:/jenkins/workspace/newproject/e2e/Holidays/Editholidayspec.js','H:/jenkins/workspace/newproject/e2e/Manage_branches/addManagebranchspec.js','H:/jenkins/workspace/newproject/e2e/Manage_branches/Editmanagebranchspec.js','H:/jenkins/workspace/newproject/e2e/work_week/workweekspec.js'],
-    },
+    //suites:
+    //{
+    //    smoke: ['F:/Jasmine/Administration/users/usersmodule/usermodulespec.js','F:/Jasmine/Administration/users/usersmodule/Searchviewusermodulespec.js','F:/Jasmine/Administration/users/usersmodule/userrolesaddspec.js','F:/Jasmine/Administration/Job_module/Departments/Add_departmentspec.js','F:/Jasmine/Administration/Job_module/Departments/Edit_deptspec.js',
+    //  'F:/Jasmine/Administration/Job_module/Jobtitles/AddjobTitlespec.js','F:/Jasmine/Administration/Job_module/Jobtitles/jobtitleresetspec.js','F:/Jasmine/Administration/Job_module/Paygrades/addpayspec.js','F:/Jasmine/Administration/Job_module/Employment_status/addemployespec.js','F:/Jasmine/Administration/Job_module/Employee_type/Addemployeetypespec.js','F:/Jasmine/Administration/Job_module/workshifts/Addworkshiftspec.js','F:/Jasmine/Administration/Qualification/skills/addskillspec.js','F:/Jasmine/Administration/Qualification/Memberships/addmembershipspec.js',
+      //'F:/Jasmine/Administration/Qualification/languages/addlanguagespec.js','F:/Jasmine/Administration/leaveconfiguration/leaveperiod/leaveperiodspec.js','F:/Jasmine/Administration/leaveconfiguration/leavetype/leavetypespec.js',
+    // 'F:/Jasmine/Administration/leaveconfiguration/LeaveAccruals/leaveaccrualsspec.js','F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'],
+
+    //},
 
     framework: 'jasmine2',
     params:
     {
-
-        url: "http://localhost:4200/authorization/login",
-      
-
-       
-        user_name: "admin",
-        user_password: "Pass12!@"
+        url: "https://qa.tedpros.com/",
+        user_name: "smlogics",
+        user_password: "Pass12!@",
+        recuser_name: "S11213",
+        url1: "https://tedpros.com",
+        teduser_name: "amarendara@gmail.com",
+        candidateuser_name: "smlogics57@gmail.com",
+        salesuser_name: "S11211",
+        gmailusername :"smlogics47@gmail.com",
+        gmailurl:"https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
     },
 
 
@@ -82,6 +111,7 @@ exports.config = {
 
                     browser.takeScreenshot().then(function (png) {
                         var stream = fs.createWriteStream('./reports/screenshots/' + browserName + '-' + result.fullName + '.png');
+                      
                         stream.write(new Buffer(png, 'base64'));
                         stream.end();
                     });
@@ -101,12 +131,12 @@ exports.config = {
             platform = caps.get('platform');
 
             testConfig = {
-                reportTitle: 'config',
+                reportTitle: 'Add leaveEntitlement ,Edit leaveEntitlement ,search leaveEntitlement under Leave Configuartion module for Test Execution Report',
                 // console.log('dir ', path.join(__dirname, '../../'));
                 //outputPath: 'F:/Jasmine/CRM/vendorcompany/reports',
                 outputPath: './reports',
-                outputFilename: 'ProtractorTestReport',
-                screenshotPath: './reports/screenshots',
+                outputFilename: 'leaveEntitlement Test Execution Report',
+                screenshotPath: '../reports/screenshots',
                 testBrowser: browserName,
                 browserVersion: browserVersion,
                 modifiedSuiteName: false,
