@@ -46,7 +46,7 @@ exports.config = {
   
     //],
 
-    specs: ['F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'],
+    // specs: ['F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'],
 
     //suites:
     //{
@@ -55,10 +55,13 @@ exports.config = {
 
     //suites:
     //{
-    //    smoke: ['F:/Jasmine/Administration/users/usersmodule/usermodulespec.js','F:/Jasmine/Administration/users/usersmodule/Searchviewusermodulespec.js','F:/Jasmine/Administration/users/usersmodule/userrolesaddspec.js','F:/Jasmine/Administration/Job_module/Departments/Add_departmentspec.js','F:/Jasmine/Administration/Job_module/Departments/Edit_deptspec.js',
-    //  'F:/Jasmine/Administration/Job_module/Jobtitles/AddjobTitlespec.js','F:/Jasmine/Administration/Job_module/Jobtitles/jobtitleresetspec.js','F:/Jasmine/Administration/Job_module/Paygrades/addpayspec.js','F:/Jasmine/Administration/Job_module/Employment_status/addemployespec.js','F:/Jasmine/Administration/Job_module/Employee_type/Addemployeetypespec.js','F:/Jasmine/Administration/Job_module/workshifts/Addworkshiftspec.js','F:/Jasmine/Administration/Qualification/skills/addskillspec.js','F:/Jasmine/Administration/Qualification/Memberships/addmembershipspec.js',
-      //'F:/Jasmine/Administration/Qualification/languages/addlanguagespec.js','F:/Jasmine/Administration/leaveconfiguration/leaveperiod/leaveperiodspec.js','F:/Jasmine/Administration/leaveconfiguration/leavetype/leavetypespec.js',
-    // 'F:/Jasmine/Administration/leaveconfiguration/LeaveAccruals/leaveaccrualsspec.js','F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'],
+       smoke: ['H:/jenkins/workspace/newproject/e2e/Administration/users/usersmodule/usermodulespec.js','H:/jenkins/workspace/newproject/e2e/Administration/users/usersmodule/Searchviewusermodulespec.js','H:/jenkins/workspace/newproject/e2e/Administration/users/usersmodule/userrolesaddspec.js','H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Departments/Add_departmentspec.js','H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Departments/Edit_deptspec.js',
+     'H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Jobtitles/AddjobTitlespec.js','H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Jobtitles/jobtitleresetspec.js','H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Paygrades/addpayspec.js','H:/jenkins/workspace/newproject/e2e/Administration/Job_module/Employment_status/addemployespec.js'],
+
+
+    //  ,'F:/Jasmine/Administration/Job_module/Employee_type/Addemployeetypespec.js','F:/Jasmine/Administration/Job_module/workshifts/Addworkshiftspec.js','F:/Jasmine/Administration/Qualification/skills/addskillspec.js','F:/Jasmine/Administration/Qualification/Memberships/addmembershipspec.js',
+    //   'F:/Jasmine/Administration/Qualification/languages/addlanguagespec.js','F:/Jasmine/Administration/leaveconfiguration/leaveperiod/leaveperiodspec.js','F:/Jasmine/Administration/leaveconfiguration/leavetype/leavetypespec.js',
+    // 'F:/Jasmine/Administration/leaveconfiguration/LeaveAccruals/leaveaccrualsspec.js','F:/Jasmine/Administration/leaveconfiguration/LeaveEntilements/addleaveEntitlementspec.js'
 
     //},
 
