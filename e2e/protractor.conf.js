@@ -46,7 +46,7 @@ exports.config = {
   
     //],
 
- specs: ['H:/jenkins/workspace/newproject/e2e/Administration/users/usersmodule/usermodulespec.js'],
+ specs: ['H:/jenkins/workspace/newproject/e2e/Administration/Qualification/Education/addeducationspec.js'],
 
     //suites:
     //{

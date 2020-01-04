@@ -1,4 +1,4 @@
-var Excel = require('exceljs');
+var Excel = require('H:/Jasmine/node_modules/exceljs');
 
 // create object for workbook
         var inboundWorkbook = new Excel.Workbook();
