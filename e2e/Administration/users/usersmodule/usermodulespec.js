@@ -1,8 +1,9 @@
-var Excel = require('F:/Jasmine/node_modules/exceljs');
+var Excel = require('H:/Jasmine/node_modules/exceljs');
 
 var inboundWorkbook = new Excel.Workbook();
-inboundWorkbook.xlsx.readFile("F:/Jasmine/TestData/Testdata.xlsx").then(function () {
+inboundWorkbook.xlsx.readFile("H:/Jasmine/ConfigModule/company_number_formats/configmodule.xlsx").then(function () {
     // inboundWorkbook.xlsx.readFile("F:/Jasmine/CrmModule.xlsx").then(function () {
+
     var inboundWorksheet = inboundWorkbook.getWorksheet(1);
     browser.waitForAngularEnabled(false);
 
