@@ -2,7 +2,7 @@ var Excel = require('H:/Jasmine/node_modules/exceljs');
 
 // create object for workbook
         var inboundWorkbook = new Excel.Workbook();
-inboundWorkbook.xlsx.readFile("F:/Jasmine/TestData/department.xlsx").then(function () {
+inboundWorkbook.xlsx.readFile("H:/tesingpro/30pushtedpro/e2e/TestData/department.xlsx").then(function () {
     var inboundWorksheet = inboundWorkbook.getWorksheet(1);
     browser.waitForAngularEnabled(false);
 
