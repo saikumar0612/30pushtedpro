@@ -91,17 +91,17 @@ exports.config = {
         // Angular sync for non angular apps
         browser.ignoreSynchronization = true;
 
-        fs.emptyDir('./reports/xml/', function (err) {
+        fs.emptyDir('H:/tesingpro/30pushtedpro/e2e/reports/xml/', function (err) {
             // console.log(err);
         });
 
-        fs.emptyDir('./reports/screenshots/', function (err) {
+        fs.emptyDir('H:/tesingpro/30pushtedpro/e2e/reports/screenshots/', function (err) {
             //console.log(err);
         });
 
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
             consolidateAll: true,
-            savePath: './reports/xml/',
+            savePath: 'H:/tesingpro/30pushtedpro/e2e/reports/xml/',
             filePrefix: 'xmlresults'
         }));
 
@@ -115,7 +115,7 @@ exports.config = {
                     var browserName = caps.get('browserName');
 
                     browser.takeScreenshot().then(function (png) {
-                        var stream = fs.createWriteStream('./reports/screenshots/' + browserName + '-' + result.fullName + '.png');
+                        var stream = fs.createWriteStream('H:/tesingpro/30pushtedpro/e2e/reports/screenshots/' + browserName + '-' + result.fullName + '.png');
                       
                         stream.write(new Buffer(png, 'base64'));
                         stream.end();
@@ -148,7 +148,7 @@ exports.config = {
                 screenshotsOnlyOnFailure: false,
                 testPlatform: platform
             };
-            new htmlReporter().from('./reports/xml/xmlresults.xml', testConfig);
+            new htmlReporter().from('H:/tesingpro/30pushtedpro/e2e/reports/xml/xmlresults.xml', testConfig);
         });
     },
 
