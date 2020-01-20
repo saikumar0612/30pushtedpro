@@ -2,7 +2,7 @@ var Excel = require('exceljs');
 
 
 var inboundWorkbook = new Excel.Workbook();
-inboundWorkbook.xlsx.readFile("H:/jenkins/workspace/newproject/TestData/Testdata.xlsx").then(function () {
+inboundWorkbook.xlsx.readFile("H:/jenkins/workspace/newproject/e2e/TestData/Testdata.xlsx").then(function () {
     var inboundWorksheet = inboundWorkbook.getWorksheet(1);
     browser.waitForAngularEnabled(false);
 
