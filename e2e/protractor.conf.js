@@ -136,12 +136,12 @@ exports.config = {
             platform = caps.get('platform');
 
             testConfig = {
-                reportTitle: 'Add leaveEntitlement ,Edit leaveEntitlement ,search leaveEntitlement under Leave Configuartion module for Test Execution Report',
+                reportTitle: 'Add leaveEntitlement ,Edit leaveEntitle, under Leave Configuartion module for Test Execution Report',
                 // console.log('dir ', path.join(__dirname, '../../'));
                 //outputPath: 'F:/Jasmine/CRM/vendorcompany/reports',
                 outputPath: 'H:/tesingpro/30pushtedpro/e2e/reports',
-                outputFilename: 'leaveEntitlement Test Execution Report',
-                screenshotPath: 'H:/tesingpro/30pushtedpro/e2e/screenshots',
+                outputFilename: 'index',
+                screenshotPath: 'H:/tesingpro/30pushtedpro/reports/e2e/screenshots',
                 testBrowser: browserName,
                 browserVersion: browserVersion,
                 modifiedSuiteName: false,
