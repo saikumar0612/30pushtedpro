@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="29" time="95.765">
- <testsuite name="Code for Add department under Job  Module" timestamp="2020-01-21T11:37:12" hostname="localhost" time="67.896" errors="0" tests="18" skipped="0" disabled="0" failures="0">
-  <testcase classname="Code for Add department under Job  Module" name="open the browser" time="15.736" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the username" time="4.851" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the password" time="0.744" />
-  <testcase classname="Code for Add department under Job  Module" name="click on login button" time="0.683" />
-  <testcase classname="Code for Add department under Job  Module" name="Hover on administration icon" time="14.705" />
-  <testcase classname="Code for Add department under Job  Module" name="click on job" time="0.395" />
-  <testcase classname="Code for Add department under Job  Module" name="click on depatment" time="2.545" />
-  <testcase classname="Code for Add department under Job  Module" name="click on add button" time="5.788" />
-  <testcase classname="Code for Add department under Job  Module" name="enter the department name" time="0.415" />
-  <testcase classname="Code for Add department under Job  Module" name="click on submit " time="0.452" />
-  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="10.558" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the department under search field" time="1.743" />
-  <testcase classname="Code for Add department under Job  Module" name="click on icon bar" time="0.382" />
-  <testcase classname="Code for Add department under Job  Module" name="click on view icon" time="1.396" />
-  <testcase classname="Code for Add department under Job  Module" name="click edit icon" time="1.466" />
-  <testcase classname="Code for Add department under Job  Module" name="Edit department name" time="1.739" />
-  <testcase classname="Code for Add department under Job  Module" name="click on submit button" time="0.463" />
-  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="3.83" />
+<testsuites disabled="0" errors="0" failures="0" tests="29" time="99.712">
+ <testsuite name="Code for Add department under Job  Module" timestamp="2020-01-21T12:39:03" hostname="localhost" time="70.71" errors="0" tests="18" skipped="0" disabled="0" failures="0">
+  <testcase classname="Code for Add department under Job  Module" name="open the browser" time="16.678" />
+  <testcase classname="Code for Add department under Job  Module" name="Enter the username" time="7.296" />
+  <testcase classname="Code for Add department under Job  Module" name="Enter the password" time="3.099" />
+  <testcase classname="Code for Add department under Job  Module" name="click on login button" time="1.374" />
+  <testcase classname="Code for Add department under Job  Module" name="Hover on administration icon" time="10.03" />
+  <testcase classname="Code for Add department under Job  Module" name="click on job" time="0.406" />
+  <testcase classname="Code for Add department under Job  Module" name="click on depatment" time="2.466" />
+  <testcase classname="Code for Add department under Job  Module" name="click on add button" time="5.582" />
+  <testcase classname="Code for Add department under Job  Module" name="enter the department name" time="0.476" />
+  <testcase classname="Code for Add department under Job  Module" name="click on submit " time="0.541" />
+  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="10.442" />
+  <testcase classname="Code for Add department under Job  Module" name="Enter the department under search field" time="1.785" />
+  <testcase classname="Code for Add department under Job  Module" name="click on icon bar" time="0.444" />
+  <testcase classname="Code for Add department under Job  Module" name="click on view icon" time="1.452" />
+  <testcase classname="Code for Add department under Job  Module" name="click edit icon" time="1.482" />
+  <testcase classname="Code for Add department under Job  Module" name="Edit department name" time="1.703" />
+  <testcase classname="Code for Add department under Job  Module" name="click on submit button" time="0.404" />
+  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="5.046" />
  </testsuite>
- <testsuite name="Code for Reset department under Job  Module" timestamp="2020-01-21T11:38:20" hostname="localhost" time="27.869" errors="0" tests="11" skipped="0" disabled="0" failures="0">
-  <testcase classname="Code for Reset department under Job  Module" name="open the browser" time="7.06" />
-  <testcase classname="Code for Reset department under Job  Module" name="Enter the username" time="0.655" />
-  <testcase classname="Code for Reset department under Job  Module" name="Enter the password" time="0.682" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on login button" time="0.68" />
-  <testcase classname="Code for Reset department under Job  Module" name="Hover on administration icon" time="9.248" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on job" time="0.386" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on depatment" time="2.435" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on add button" time="5.45" />
-  <testcase classname="Code for Reset department under Job  Module" name="enter the department name" time="0.425" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on reset button" time="0.42" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on cancel button" time="0.426" />
+ <testsuite name="Code for Reset department under Job  Module" timestamp="2020-01-21T12:40:14" hostname="localhost" time="29.002" errors="0" tests="11" skipped="0" disabled="0" failures="0">
+  <testcase classname="Code for Reset department under Job  Module" name="open the browser" time="5.61" />
+  <testcase classname="Code for Reset department under Job  Module" name="Enter the username" time="0.667" />
+  <testcase classname="Code for Reset department under Job  Module" name="Enter the password" time="0.67" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on login button" time="0.694" />
+  <testcase classname="Code for Reset department under Job  Module" name="Hover on administration icon" time="10.703" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on job" time="0.599" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on depatment" time="2.747" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on add button" time="6.005" />
+  <testcase classname="Code for Reset department under Job  Module" name="enter the department name" time="0.445" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on reset button" time="0.418" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on cancel button" time="0.441" />
  </testsuite>
 </testsuites>
