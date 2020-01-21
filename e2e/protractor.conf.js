@@ -141,7 +141,7 @@ exports.config = {
                 //outputPath: 'F:/Jasmine/CRM/vendorcompany/reports',
                 outputPath: 'H:/tesingpro/30pushtedpro/e2e/reports',
                 outputFilename: 'index',
-                screenshotPath: 'H:/tesingpro/30pushtedpro/reports/e2e/screenshots',
+                screenshotPath: 'H:/tesingpro/30pushtedpro/e2e/reports/screenshots',
                 testBrowser: browserName,
                 browserVersion: browserVersion,
                 modifiedSuiteName: false,
