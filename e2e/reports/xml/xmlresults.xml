@@ -1,36 +1,547 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="29" time="99.712">
- <testsuite name="Code for Add department under Job  Module" timestamp="2020-01-21T12:39:03" hostname="localhost" time="70.71" errors="0" tests="18" skipped="0" disabled="0" failures="0">
-  <testcase classname="Code for Add department under Job  Module" name="open the browser" time="16.678" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the username" time="7.296" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the password" time="3.099" />
-  <testcase classname="Code for Add department under Job  Module" name="click on login button" time="1.374" />
-  <testcase classname="Code for Add department under Job  Module" name="Hover on administration icon" time="10.03" />
-  <testcase classname="Code for Add department under Job  Module" name="click on job" time="0.406" />
-  <testcase classname="Code for Add department under Job  Module" name="click on depatment" time="2.466" />
-  <testcase classname="Code for Add department under Job  Module" name="click on add button" time="5.582" />
-  <testcase classname="Code for Add department under Job  Module" name="enter the department name" time="0.476" />
-  <testcase classname="Code for Add department under Job  Module" name="click on submit " time="0.541" />
-  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="10.442" />
-  <testcase classname="Code for Add department under Job  Module" name="Enter the department under search field" time="1.785" />
-  <testcase classname="Code for Add department under Job  Module" name="click on icon bar" time="0.444" />
-  <testcase classname="Code for Add department under Job  Module" name="click on view icon" time="1.452" />
-  <testcase classname="Code for Add department under Job  Module" name="click edit icon" time="1.482" />
-  <testcase classname="Code for Add department under Job  Module" name="Edit department name" time="1.703" />
-  <testcase classname="Code for Add department under Job  Module" name="click on submit button" time="0.404" />
-  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="5.046" />
+<testsuites disabled="0" errors="0" failures="8" tests="29" time="1895.958">
+ <testsuite name="Code for Add department under Job  Module" timestamp="2020-01-21T17:24:03" hostname="localhost" time="1867.647" errors="0" tests="18" skipped="0" disabled="0" failures="8">
+  <testcase classname="Code for Add department under Job  Module" name="open the browser" time="24.891" />
+  <testcase classname="Code for Add department under Job  Module" name="Enter the username" time="8.863" />
+  <testcase classname="Code for Add department under Job  Module" name="Enter the password" time="1.535" />
+  <testcase classname="Code for Add department under Job  Module" name="click on login button" time="0.788" />
+  <testcase classname="Code for Add department under Job  Module" name="Hover on administration icon" time="14.376" />
+  <testcase classname="Code for Add department under Job  Module" name="click on job" time="0.494" />
+  <testcase classname="Code for Add department under Job  Module" name="click on depatment" time="2.55" />
+  <testcase classname="Code for Add department under Job  Module" name="click on add button" time="5.461" />
+  <testcase classname="Code for Add department under Job  Module" name="enter the department name" time="0.468" />
+  <testcase classname="Code for Add department under Job  Module" name="click on submit " time="0.56" />
+  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="300.54">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //p[@class=&apos;bg-success&apos;])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //p[@class='bg-success'])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:102:67)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:103:22)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("open the verify the pop up message and click on view button") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Timeout._onTimeout (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:100:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="Enter the department under search field" time="300.743">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //input[@id=&apos;searchname&apos;])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //input[@id='searchname'])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as sendKeys] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as sendKeys] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:116:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("Enter the department under search field") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:113:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="click on icon bar" time="301.737">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //tr[2]//td[2]//a[1]//div[1]//i[1])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //tr[2]//td[2]//a[1]//div[1]//i[1])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:128:19)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("click on icon bar") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:125:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="click on view icon" time="300.678">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //tr[2]//td[2]//ul[1]//li[2]//a[1]//button[1]//i[1])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //tr[2]//td[2]//ul[1]//li[2]//a[1]//button[1]//i[1])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:134:23)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("click on view icon") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:132:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="click edit icon" time="300.721">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //a[@id=&apos;editjobcategories&apos;])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //a[@id='editjobcategories'])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:141:23)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("click edit icon") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:139:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="Edit department name" time="2.382">
+   <failure type="exception" message="Failed: element click intercepted: Element &lt;input _ngcontent-pyd-c7=&quot;&quot; class=&quot;form-control mb-10 ng-dirty ng-valid ng-touched&quot; id=&quot;jobName&quot; name=&quot;jobName&quot; pattern=&quot;^(?!.*[.&amp;amp;*-]{2})([a-zA-Z0-9.&amp;amp;*-]+\s)*[a-zA-Z0-9.&amp;amp;*-]+$&quot; placeholder=&quot;Enter Department&quot; required=&quot;&quot; type=&quot;text&quot; ng-reflect-klass=&quot;form-control mb-10&quot; ng-reflect-ng-class=&quot;[object Object]&quot; ng-reflect-required=&quot;&quot; ng-reflect-minlength=&quot;3&quot; ng-reflect-maxlength=&quot;100&quot; ng-reflect-pattern=&quot;^(?!.*[.&amp;amp;*-]{2})([a-zA-Z0-9.&amp;amp;*&quot; ng-reflect-name=&quot;jobName&quot; ng-reflect-model=&quot;BPO&quot; minlength=&quot;3&quot; maxlength=&quot;100&quot;&gt; is not clickable at point (525, 203). Other element would receive the click: &lt;div _ngcontent-pyd-c7=&quot;&quot; class=&quot;popupbox_wrap&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.100)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-K9OR7L6G&apos;, ip: &apos;192.168.228.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
+Driver info: driver.version: unknown"><![CDATA[WebDriverError: element click intercepted: Element <input _ngcontent-pyd-c7="" class="form-control mb-10 ng-dirty ng-valid ng-touched" id="jobName" name="jobName" pattern="^(?!.*[.&amp;*-]{2})([a-zA-Z0-9.&amp;*-]+\s)*[a-zA-Z0-9.&amp;*-]+$" placeholder="Enter Department" required="" type="text" ng-reflect-klass="form-control mb-10" ng-reflect-ng-class="[object Object]" ng-reflect-required="" ng-reflect-minlength="3" ng-reflect-maxlength="100" ng-reflect-pattern="^(?!.*[.&amp;*-]{2})([a-zA-Z0-9.&amp;*" ng-reflect-name="jobName" ng-reflect-model="BPO" minlength="3" maxlength="100"> is not clickable at point (525, 203). Other element would receive the click: <div _ngcontent-pyd-c7="" class="popupbox_wrap">...</div>
+  (Session info: chrome=76.0.3809.100)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-K9OR7L6G', ip: '192.168.228.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: unknown
+    at Object.checkLegacyResponse (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\error.js:546:15)
+    at parseHttpResponse (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\http.js:509:13)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\http.js:441:30
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: WebElement.click()
+    at thenableWebDriverProxy.schedule (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:807:17)
+    at WebElement.schedule_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:2010:25)
+    at WebElement.click (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:2092:17)
+    at actionFn (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:89:44)
+    at Array.map (<anonymous>)
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:461:65
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:148:22)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("Edit department name") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:146:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="click on submit button" time="0.494">
+   <failure type="exception" message="Failed: element click intercepted: Element &lt;button _ngcontent-pyd-c7=&quot;&quot; class=&quot;btn btn-primary mlr-5&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (102, 243). Other element would receive the click: &lt;div _ngcontent-pyd-c7=&quot;&quot; class=&quot;popupbox_wrap&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.100)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-K9OR7L6G&apos;, ip: &apos;192.168.228.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_101&apos;
+Driver info: driver.version: unknown"><![CDATA[WebDriverError: element click intercepted: Element <button _ngcontent-pyd-c7="" class="btn btn-primary mlr-5" id="submit" type="submit">...</button> is not clickable at point (102, 243). Other element would receive the click: <div _ngcontent-pyd-c7="" class="popupbox_wrap">...</div>
+  (Session info: chrome=76.0.3809.100)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-K9OR7L6G', ip: '192.168.228.14', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: unknown
+    at Object.checkLegacyResponse (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\error.js:546:15)
+    at parseHttpResponse (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\http.js:509:13)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\http.js:441:30
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: WebElement.click()
+    at thenableWebDriverProxy.schedule (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:807:17)
+    at WebElement.schedule_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:2010:25)
+    at WebElement.click (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\webdriver.js:2092:17)
+    at actionFn (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:89:44)
+    at Array.map (<anonymous>)
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:461:65
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as click] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:158:21)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("click on submit button") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:155:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
+  <testcase classname="Code for Add department under Job  Module" name="open the verify the pop up message and click on view button" time="300.362">
+   <failure type="exception" message="Failed: No element found using locator: By(xpath, //p[@class=&apos;bg-success&apos;])"><![CDATA[NoSuchElementError: No element found using locator: By(xpath, //p[@class='bg-success'])
+    at H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:165:68)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)Error
+    at ElementArrayFinder.applyAction_ (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as getText] (H:\jenkins\workspace\newproject\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:166:23)
+    at H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at H:\jenkins\workspace\newproject\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:89:5)
+From: Task: Run it("open the verify the pop up message and click on view button") in control flow
+    at UserContext.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasminewd2\index.js:94:19)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at QueueRunner.complete [as onComplete] (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+    at Immediate.<anonymous> (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+    at processImmediate (internal/timers.js:439:21)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:163:5)
+    at addSpecsToSuite (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (H:\jenkins\workspace\newproject\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (H:\jenkins\workspace\newproject\e2e\Administration\Job_module\Departments\Add_departmentspec.js:25:1)
+    at Module._compile (internal/modules/cjs/loader.js:774:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    at Module.load (internal/modules/cjs/loader.js:641:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:681:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:93:5
+    at Array.forEach (<anonymous>)
+    at Jasmine.loadSpecs (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:92:18)
+    at Jasmine.execute (H:\jenkins\workspace\newproject\node_modules\jasmine\lib\jasmine.js:197:8)]]>
+   </failure>
+  </testcase>
  </testsuite>
- <testsuite name="Code for Reset department under Job  Module" timestamp="2020-01-21T12:40:14" hostname="localhost" time="29.002" errors="0" tests="11" skipped="0" disabled="0" failures="0">
-  <testcase classname="Code for Reset department under Job  Module" name="open the browser" time="5.61" />
-  <testcase classname="Code for Reset department under Job  Module" name="Enter the username" time="0.667" />
-  <testcase classname="Code for Reset department under Job  Module" name="Enter the password" time="0.67" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on login button" time="0.694" />
-  <testcase classname="Code for Reset department under Job  Module" name="Hover on administration icon" time="10.703" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on job" time="0.599" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on depatment" time="2.747" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on add button" time="6.005" />
-  <testcase classname="Code for Reset department under Job  Module" name="enter the department name" time="0.445" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on reset button" time="0.418" />
-  <testcase classname="Code for Reset department under Job  Module" name="click on cancel button" time="0.441" />
+ <testsuite name="Code for Reset department under Job  Module" timestamp="2020-01-21T17:55:11" hostname="localhost" time="28.311" errors="0" tests="11" skipped="0" disabled="0" failures="0">
+  <testcase classname="Code for Reset department under Job  Module" name="open the browser" time="6.175" />
+  <testcase classname="Code for Reset department under Job  Module" name="Enter the username" time="0.772" />
+  <testcase classname="Code for Reset department under Job  Module" name="Enter the password" time="0.983" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on login button" time="0.686" />
+  <testcase classname="Code for Reset department under Job  Module" name="Hover on administration icon" time="8.73" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on job" time="0.502" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on depatment" time="3.119" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on add button" time="5.548" />
+  <testcase classname="Code for Reset department under Job  Module" name="enter the department name" time="0.822" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on reset button" time="0.48" />
+  <testcase classname="Code for Reset department under Job  Module" name="click on cancel button" time="0.492" />
  </testsuite>
 </testsuites>
